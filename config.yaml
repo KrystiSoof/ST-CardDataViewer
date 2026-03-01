@@ -1,0 +1,36 @@
+{
+  "ui": {
+    "theme": "default",
+    "window_width": 1100,
+    "window_height": 700,
+    "preview_width": 400,
+    "preview_height": 600
+  },
+  "editor": {
+    "auto_format_json": true,
+    "show_line_numbers": false,
+    "font_family": "Consolas",
+    "font_size": 10,
+    "wrap_word": true
+  },
+  "file": {
+    "default_export_format": "png",
+    "backup_before_save": true,
+    "backup_extension": ".bak"
+  },
+  "autosave": {
+    "enabled": true,
+    "interval_minutes": 5,
+    "max_backups": 10
+  },
+  "logging": {
+    "level": "INFO",
+    "log_to_file": false,
+    "log_file": "sillytavern_editor.log"
+  },
+  "features": {
+    "drag_and_drop": true,
+    "undo_redo": true,
+    "max_history": 50
+  }
+}
