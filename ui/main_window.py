@@ -269,7 +269,7 @@ class SillyTavernCardEditor:
         new_height = int(img_height * scale)
 
         # Resize image for display
-        display_image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        display_image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)  # type: ignore
 
         # Convert to PhotoImage
         self.photo = ImageTk.PhotoImage(display_image)
