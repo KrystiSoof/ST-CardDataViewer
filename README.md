@@ -47,26 +47,46 @@ A powerful, easy-to-use GUI application for viewing and editing embedded SillyTa
 
 ## Quick Start
 
+**Windows:**
 1. Double-click **[setup.bat](setup.bat)** to install dependencies
 2. Double-click **[run.bat](run.bat)** to launch
-3. Click **"📁 Browse File"** (or drag & drop) to select your character card
-4. Edit data in any of the tabs
-5. Click **"💾 Save Changes"** to save your edits
+
+**Linux/macOS:**
+1. Make scripts executable: `chmod +x setup.sh run.sh run_tests.sh`
+2. Run `./setup.sh` to install dependencies
+3. Run `./run.sh` to launch
+
+Then:
+4. Click **"📁 Browse File"** (or drag & drop) to select your character card
+5. Edit data in any of the tabs
+6. Click **"💾 Save Changes"** to save your edits
 
 ## Installation
 
-### Option 1: Quick Setup (Recommended)
+### Windows
 
+**Option 1: Quick Setup (Recommended)**
 1. Double-click `setup.bat` to install dependencies automatically
 
-### Option 2: Manual Setup
-
+**Option 2: Manual Setup**
 1. Make sure you have Python 3.8 or higher installed
 2. Install the required dependencies:
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
 
-```bash
-python -m pip install -r requirements.txt
-```
+### Linux/macOS
+
+**Option 1: Quick Setup (Recommended)**
+1. Make the setup script executable: `chmod +x setup.sh`
+2. Run `./setup.sh` to install dependencies
+
+**Option 2: Manual Setup**
+1. Make sure you have Python 3.8 or higher installed
+2. Install the required dependencies:
+   ```bash
+   python3 -m pip install -r requirements.txt
+   ```
 
 ## Configuration
 
@@ -98,15 +118,13 @@ See `config.json` for all available options.
 
 ### Running the Application
 
-**Option 1: Double-click (Recommended)**
-```
-Double-click run.bat
-```
+**Windows:**
+- **Option 1:** Double-click `run.bat`
+- **Option 2:** Run `python main.py`
 
-**Option 2: Command Line**
-```bash
-python main.py
-```
+**Linux/macOS:**
+- **Option 1:** Make the script executable: `chmod +x run.sh`, then run `./run.sh`
+- **Option 2:** Run `python3 main.py`
 
 ### Editing Character Cards
 
@@ -156,13 +174,13 @@ The application automatically handles various field name conventions:
 
 To run the unit tests:
 
-```bash
-# Windows
-run_tests.bat
+**Windows:**
+- Run `run_tests.bat`
+- Or using pytest directly: `python -m pytest tests/ -v`
 
-# Or using pytest directly
-pytest tests/ -v
-```
+**Linux/macOS:**
+- Make the script executable: `chmod +x run_tests.sh`, then run `./run_tests.sh`
+- Or using pytest directly: `python3 -m pytest tests/ -v`
 
 Test coverage includes:
 - Parser functionality
@@ -185,9 +203,12 @@ ST-CardDataViewer/
 ├── main.py                     # Entry point
 ├── requirements.txt            # Dependencies
 ├── config.json               # Configuration (auto-created)
-├── run.bat                  # Run application
-├── run_tests.bat            # Run unit tests
-├── setup.bat                # Install dependencies
+├── run.bat                  # Run application (Windows)
+├── run.sh                   # Run application (Linux/macOS)
+├── run_tests.bat            # Run unit tests (Windows)
+├── run_tests.sh             # Run unit tests (Linux/macOS)
+├── setup.bat                # Install dependencies (Windows)
+├── setup.sh                 # Install dependencies (Linux/macOS)
 ├── core/                   # Core functionality
 │   ├── parser.py           # Data extraction
 │   ├── formatter.py        # JSON formatting
@@ -206,8 +227,12 @@ ST-CardDataViewer/
 ## Troubleshooting
 
 **"Import 'PIL' could not be resolved":**
-- Run `setup.bat` to install dependencies
-- Or manually: `python -m pip install -r requirements.txt`
+- Windows: Run `setup.bat`
+- Linux/macOS: Run `./setup.sh`
+- Or manually: `python -m pip install -r requirements.txt` (Windows) or `python3 -m pip install -r requirements.txt` (Linux/macOS)
+
+**"Permission denied" when running shell scripts:**
+- Run: `chmod +x setup.sh run.sh run_tests.sh`
 
 **Drag and drop not working:**
 - Install `tkinterdnd2`: `pip install tkinterdnd2`
@@ -221,6 +246,11 @@ ST-CardDataViewer/
 - Check `config.json`: `"features": {"undo_redo": true}`
 - History is cleared when loading a new file
 
+**Tkinter not installed (Linux):**
+- Ubuntu/Debian: `sudo apt-get install python3-tk`
+- Fedora: `sudo dnf install python3-tkinter`
+- Arch: `sudo pacman -S python-tk`
+
 ## Tips
 
 - Use **Undo/Redo** to experiment with changes
@@ -230,6 +260,7 @@ ST-CardDataViewer/
 - **Drag & Drop** for quick file loading
 - Customize **settings** in `config.json`
 - **Run tests** to verify functionality
+- **Linux/macOS**: Make shell scripts executable once with `chmod +x *.sh`
 
 ## License
 
