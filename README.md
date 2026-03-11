@@ -2,66 +2,56 @@
 
 A powerful, easy-to-use GUI application for viewing and editing embedded SillyTavern character card data in PNG files.
 
-## ✨ What's New? - Major Refactor!
+## Features
 
-The application has been completely refactored with numerous enhancements:
+### Core Functionality
+- **Visual Preview**: See the character card image in the preview pane
+- **Tabbed Interface**: Easy-to-use tabs for different character sections
+- **Form-Based Editing**: Edit character data in friendly form fields instead of raw JSON
+- **Live Sync**: Changes in form fields automatically update the raw JSON view
+- **Format JSON**: Automatically format and prettify your JSON data
+- **Save Changes**: Save your edits back to the original file or create a new file
 
-### 🏗️ Architecture
-- ✅ **Modular Design**: Split into organized modules for better maintainability
-- ✅ **Type Hints**: Full type annotations for better IDE support
-- ✅ **Logging System**: Replaced print statements with proper logging
-- ✅ **Unit Tests**: Comprehensive test coverage
+### Data Editing Tabs
+- **📝 Basic Info**: Edit name, description, personality, and scenario
+- **💬 Messages**: Edit first message, example messages, and alternate greetings
+- **⚙️ Advanced**: Edit creator notes, system prompts, tags, and metadata
+- **🔧 Raw JSON**: Direct JSON editing for advanced users with search & replace
 
-### 🎨 User Experience
-- ✅ **Undo/Redo**: Full history management for all changes
-- ✅ **Auto-Save**: Configurable automatic saving with backups
-- ✅ **Drag & Drop**: Drop character cards directly into the app
-- ✅ **Loading States**: Visual feedback during operations
-- ✅ **Better Errors**: Clear, actionable error messages
+### History & Autosave
+- **Undo/Redo**: Full undo/redo history with configurable size (default: 50 states)
+- **Auto-Save**: Automatic saving with configurable interval (default: 5 minutes)
+- **Automatic Backups**: Backup files created before each save
+- **Visual Status**: Indicators for save status and operations
 
-### 📝 Features
-- ✅ **JSON Export/Import**: Work with JSON separately from images
-- ✅ **Search & Replace**: Find and replace in JSON editor
-- ✅ **Data Validation**: Real-time validation of inputs
-- ✅ **Configuration File**: Customize all settings
-- ✅ **Batch Processing**: Process multiple cards at once
+### File Management
+- **Drag & Drop**: Drop PNG files directly into the application
+- **JSON Export**: Export character data to standalone JSON files
+- **JSON Import**: Import character data from JSON files
+- **Batch Processing**: Process multiple character cards at once
+- **Copy JSON**: Easily copy character data to clipboard
 
-### Quick Start
+### Data Validation & Quality
+- **Real-time Validation**: Validate tags, names, and text fields
+- **Tag Validation**: Max 100 characters, no special characters
+- **Name Validation**: Max 200 characters
+- **Better Error Messages**: Clear, specific error messages for common issues
+- **Loading Indicators**: Visual feedback during file operations
+
+### Configuration
+- **JSON-based Configuration**: Customize all settings in `config.json`
+- **UI Settings**: Window size, fonts, colors
+- **Editor Preferences**: Auto-format, word wrap, validation
+- **Feature Toggles**: Enable/disable features as needed
+- **Logging Options**: Configure log levels and output
+
+## Quick Start
 
 1. Double-click **[setup.bat](setup.bat)** to install dependencies
 2. Double-click **[run.bat](run.bat)** to launch
 3. Click **"📁 Browse File"** (or drag & drop) to select your character card
 4. Edit data in any of the tabs
 5. Click **"💾 Save Changes"** to save your edits
-
-## Features
-
-### Core Features
-- **Visual Preview**: See the character card image in the preview pane
-- **Tabbed Interface**: Easy-to-use tabs for different character sections
-- **Form-Based Editing**: Edit character data in friendly form fields instead of raw JSON
-- **Basic Info Tab**: Edit name, description, personality, and scenario
-- **Messages Tab**: Edit first message, example messages, and alternate greetings
-- **Advanced Tab**: Edit system prompts, creator notes, tags, and metadata
-- **Raw JSON Tab**: Direct JSON editing for advanced users
-- **Live Sync**: Changes in form fields automatically update the raw JSON view
-- **Copy JSON**: Easily copy character data to clipboard
-- **Refresh Data**: Sync form fields from raw JSON after manual edits
-- **Format JSON**: Automatically format and prettify your JSON data
-- **Save Changes**: Save your edits back to the original file or create a new file
-
-### New Features
-- **Undo/Redo**: Full undo/redo history with configurable size
-- **Auto-Save**: Automatic saving with configurable interval
-- **Drag & Drop**: Drop PNG files directly into the application
-- **JSON Export**: Export character data to standalone JSON files
-- **JSON Import**: Import character data from JSON files
-- **Search & Replace**: Find and replace text in JSON editor
-- **Data Validation**: Real-time validation for tags, names, and text fields
-- **Better Error Messages**: Clear, specific error messages for common issues
-- **Configuration File**: JSON-based configuration for all settings
-- **Batch Processing**: Process multiple character cards at once
-- **Loading Indicators**: Visual feedback during file operations
 
 ## Installation
 
@@ -142,46 +132,6 @@ python main.py
    - **📥 Import JSON**: Import data from JSON file
 
 4. **Auto-save**: Changes are automatically saved at intervals (configurable)
-
-## New Features in Detail
-
-### Undo/Redo
-- Full history of all changes
-- Configurable history size (default: 50 states)
-- Works across all tabs
-- Preserves state even after saves
-
-### Auto-Save
-- Configurable interval (default: 5 minutes)
-- Automatic backups before saving
-- Configurable backup extension
-- Visual status updates
-
-### Drag & Drop
-- Drop PNG files directly onto preview
-- Requires `tkinterdnd2` (optional)
-- Graceful fallback if not installed
-- Can be disabled in config
-
-### JSON Export/Import
-- Export character data to standalone JSON
-- Import character data from JSON files
-- Useful for version control
-- Separate from image data
-
-### Data Validation
-- Real-time tag validation (max 100 chars, no special chars)
-- Character name validation (max 200 chars)
-- Text field validation (configurable max length)
-- Visual feedback for invalid inputs
-
-### Configuration
-All settings are customizable via `config.json`:
-- UI settings (window size, fonts)
-- Editor preferences (auto-format, word wrap)
-- Auto-save configuration
-- Feature toggles
-- Logging options
 
 ## Supported Data Formats
 
